@@ -3,28 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harsahir Singh | IT Service Management</title>
+<title>Harsahir Singh | IT Service Management & Cloud Engineering</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 /* --- CSS VARIABLES --- */
 :root {
-    --primary: #005A9E;
-    --accent: #0078D4;
-    --dark: #242424;
-    --light-bg: #F5F7FA;
+    --primary: #002D62; /* Dark Navy */
+    --accent: #0078D4;  /* Bright Blue Accent */
+    --background: #f2f4f8; /* Soft light gray */
     --white: #ffffff;
-    --border-color: #E1E4E8;
-    --shadow: 0 4px 6px rgba(0,0,0,0.05);
+    --dark-text: #1F2937;
+    --light-text: #4B5563;
+    --border: #D1D5DB;
+    --shadow: 0 4px 8px rgba(0,0,0,0.05);
     --shadow-hover: 0 10px 15px rgba(0,0,0,0.1);
 }
-/* --- GLOBAL RESET --- */
+
+/* --- GLOBAL --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Roboto', sans-serif; color: var(--dark); line-height: 1.6; background-color: var(--light-bg); }
+body { font-family: 'Roboto', sans-serif; color: var(--dark-text); line-height: 1.6; background-color: var(--background); }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
-/* --- NAVIGATION --- */
+/* --- NAV --- */
 nav {
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -41,72 +43,80 @@ nav {
     align-items: center;
     padding: 1rem 2rem;
 }
-.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
-.nav-links { display: flex; align-items: center; gap: 2rem; }
-.nav-links a { font-weight: 500; font-size: 0.95rem; color: #555; }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; }
+.nav-links a { font-weight: 500; color: var(--light-text); font-size: 0.95rem; }
 .nav-links a:hover { color: var(--primary); }
-.btn-resume { background-color: var(--primary); color: #fff !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 500; transition: background 0.3s; }
+.btn-resume {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
 .btn-resume:hover { background-color: var(--accent); }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
     padding: 10rem 2rem 6rem 2rem;
-    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
 }
 .hero-text { flex: 1; }
-.hero h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 1rem; color: var(--dark); }
-.hero p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 500px; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; color: var(--light-text); margin-bottom: 2rem; max-width: 500px; }
 .hero-img-container { flex: 1; display: flex; justify-content: center; }
-.hero-img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 8px solid var(--light-bg); box-shadow: var(--shadow-hover); }
-.social-icons a { font-size: 1.5rem; margin-right: 1.5rem; color: #777; }
+.hero-img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 6px solid var(--white); box-shadow: var(--shadow-hover); }
+.social-icons a { font-size: 1.5rem; margin-right: 1.5rem; color: var(--light-text); }
 .social-icons a:hover { color: var(--primary); }
 
-/* --- SECTION STYLES --- */
+/* --- SECTION --- */
 section { padding: 6rem 2rem; }
-.bg-light { background-color: #e8edf5; }
 .section-container { max-width: 1000px; margin: 0 auto; }
-h2 { font-size: 2rem; color: var(--primary); margin-bottom: 3rem; position: relative; display: inline-block; }
-h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent); margin-top: 10px; border-radius: 2px; }
+h2 { font-size: 2rem; color: var(--primary); margin-bottom: 2.5rem; position: relative; display: inline-block; }
+h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--accent); margin-top: 8px; border-radius: 2px; }
 
-/* --- EXPERIENCE TIMELINE --- */
-.timeline { position: relative; max-width: 900px; margin: 0 auto; }
-.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #D1D5DB; border-radius: 2px; }
+/* --- EXPERIENCE --- */
+.timeline { position: relative; max-width: 800px; margin: 0 auto; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--border); border-radius: 2px; }
 .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 2.5rem; }
 .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 16px; height: 16px; background: var(--white); border: 4px solid var(--primary); border-radius: 50%; z-index: 1; }
-.timeline-card { background: var(--white); padding: 2rem; border-radius: 8px; box-shadow: var(--shadow); border-left: 4px solid var(--primary); }
-.role-title { font-size: 1.25rem; font-weight: 700; color: var(--dark); }
+.timeline-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+.role-title { font-size: 1.25rem; font-weight: 700; color: var(--dark-text); }
 .company-name { font-size: 1rem; color: var(--primary); font-weight: 500; margin-bottom: 0.5rem; display: block; }
-.date-range { font-size: 0.9rem; color: #888; margin-bottom: 1rem; display: block; font-style: italic; }
-.timeline-card ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: #555; }
+.date-range { font-size: 0.9rem; color: var(--light-text); margin-bottom: 1rem; display: block; font-style: italic; }
+.timeline-card ul li { margin-bottom: 0.5rem; color: var(--light-text); padding-left: 1.5rem; position: relative; }
 .timeline-card ul li::before { content: "\f054"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; top: 3px; color: var(--accent); font-size: 0.7rem; }
 
-/* --- PROJECTS GRID --- */
+/* --- PROJECTS --- */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-.project-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; transition: 0.3s; }
-.project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
-.project-body { padding: 2rem; }
-.project-icon { color: var(--primary); font-size: 2rem; margin-bottom: 1rem; }
-.project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.8rem; }
-.project-desc { font-size: 0.95rem; color: #666; margin-bottom: 1.5rem; }
-.tech-tag { display: inline-block; background: #EBF8FF; color: var(--primary); padding: 4px 10px; font-size: 0.8rem; border-radius: 20px; margin-right: 5px; margin-bottom: 5px; font-weight: 500; }
+.project-card { background: var(--white); border-radius: 8px; padding: 2rem; box-shadow: var(--shadow); transition: 0.3s; }
+.project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.project-title { font-weight: 700; margin-bottom: 0.8rem; font-size: 1.2rem; color: var(--primary); }
+.project-desc ul { margin-left: 1.2rem; color: var(--light-text); }
+.tech-tag { display: inline-block; background: #E0F2FF; color: var(--primary); padding: 3px 10px; font-size: 0.8rem; border-radius: 20px; margin-right: 5px; margin-bottom: 5px; font-weight: 500; }
 
-/* --- EDUCATION CARDS --- */
-.edu-card { background: var(--white); padding: 1.5rem 2rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); border-left: 4px solid var(--primary); }
+/* --- EDUCATION --- */
+.education-card { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 1.5rem; }
+.education-card h3 { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+.education-card p { color: var(--light-text); font-size: 0.95rem; }
 
 /* --- FOOTER --- */
-footer { background: var(--dark); color: #aaa; text-align: center; padding: 3rem 0; font-size: 0.9rem; }
+footer { background: var(--primary); color: #fff; text-align: center; padding: 3rem 0; font-size: 0.9rem; }
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
     .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; }
     .hero-img { width: 200px; height: 200px; }
     .nav-links { display: none; }
-    .logo { margin: 0 auto; }
     .timeline::before { left: 20px; }
     .timeline-item { padding-left: 3rem; }
     .timeline-item::before { left: 14px; }
@@ -115,161 +125,140 @@ footer { background: var(--dark); color: #aaa; text-align: center; padding: 3rem
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
-<div class="nav-container">
-    <div class="logo">Harsahir Singh</div>
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="./Harsahir Singh Resume.pdf" class="btn-resume" download>
-            <i class="fas fa-file-download"></i> Download Resume
-        </a>
+    <div class="nav-container">
+        <div class="logo">Harsahir Singh</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="./Harsahir Singh Resume.pdf" class="btn-resume" download><i class="fas fa-file-download"></i> Resume</a>
+        </div>
     </div>
-</div>
 </nav>
 
-<!-- HERO / ABOUT ME -->
 <header class="hero" id="about">
-<div class="hero-text">
-    <h1>IT Service Management <br> & Cloud Engineer</h1>
-    <p>
-        I am an IT Service Management leader with hands-on experience in cloud and enterprise infrastructure. 
-        Currently driving operational excellence at HOOPP with Azure & AWS technologies, incident management, and governance-focused ITSM practices.
-    </p>
-    <div class="social-icons">
-        <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/HarsahirSingh" target="_blank"><i class="fab fa-github"></i></a>
+    <div class="hero-text">
+        <h1>Manager, IT Service Management <br>& Cloud Engineer</h1>
+        <p>Driving operational excellence in enterprise IT through ITSM leadership, cloud engineering, and strategic problem solving. Experienced in Azure, AWS, and governance-driven service delivery.</p>
+        <div class="social-icons">
+            <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/HarsahirSingh" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </div>
-</div>
-<div class="hero-img-container">
-    <img src="Harsahir Singh.jpg" alt="Harsahir Singh" class="hero-img">
-</div>
+    <div class="hero-img-container">
+        <img src="Harsahir Singh.jpg" alt="Harsahir Singh" class="hero-img">
+    </div>
 </header>
 
-<!-- PROFESSIONAL EXPERIENCE -->
-<section id="experience" class="bg-light">
-<div class="section-container">
-    <h2>Professional Experience</h2>
-    <div class="timeline">
+<section id="experience">
+    <div class="section-container">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
 
-        <!-- CURRENT ROLE -->
-        <div class="timeline-item">
-            <div class="timeline-card">
-                <span class="role-title">Manager / IT Service Management</span>
-                <span class="company-name">HOOPP (Healthcare of Ontario Pension Plan)</span>
-                <span class="date-range">Nov 2024 – Present</span>
-                <ul>
-                    <li>Lead high-impact (P1/P2) incidents, coordinating cross-functional teams across IT, networking, and cloud operations to ensure rapid service restoration and minimal downtime.</li>
-                    <li>Facilitate major incident response and post-incident reviews, ensuring root cause analysis and actionable remediation plans are delivered.</li>
-                    <li>Oversee IT change management processes, participating in CAB meetings and evaluating risk/impact for critical system changes.</li>
-                    <li>Monitor enterprise services using AppDynamics, Splunk, and Azure Monitor to detect anomalies, optimize performance, and proactively address potential issues.</li>
-                    <li>Develop and maintain Power BI dashboards to visualize ITSM metrics, SLA compliance, incident trends, and operational KPIs for leadership reporting.</li>
-                    <li>Collaborate with cloud engineering teams to deploy, maintain, and improve Azure and AWS infrastructure supporting enterprise applications.</li>
-                    <li>Implement governance-driven ITSM practices, improving compliance with ITIL standards and internal policies.</li>
-                    <li>Drive continuous improvement initiatives, identifying process gaps, automation opportunities, and efficiency enhancements across IT operations.</li>
-                    <li>Act as liaison between technical teams and stakeholders, ensuring clear communication of incident impact, system changes, and project progress.</li>
-                    <li>Gain exposure to Business Continuity Management (BCM) and Disaster Recovery (DR) planning, supporting enterprise-wide resilience strategies.</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <span class="role-title">Manager / IT Service Management (Current)</span>
+                    <span class="company-name">HOOPP | Nov 2024 – Present</span>
+                    <ul>
+                        <li>Lead ITSM operations including incident, change, and problem management.</li>
+                        <li>Coordinate cross-functional teams for high-impact (P1/P2) incidents and service restoration.</li>
+                        <li>Manage CAB meetings, post-incident reviews, and governance communications.</li>
+                        <li>Monitor services using AppDynamics, Splunk, and Azure Monitor.</li>
+                        <li>Develop Power BI dashboards for reporting metrics and operational insights.</li>
+                        <li>Drive continuous improvement initiatives to enhance service reliability.</li>
+                        <li>Implement ITSM best practices aligned with enterprise standards.</li>
+                        <li>Mentor team members to build ITSM maturity and efficiency.</li>
+                        <li>Engage with stakeholders for critical infrastructure decisions.</li>
+                        <li>Oversee cloud adoption projects for Azure & AWS environments.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- CO-OP / CLOUD -->
-        <div class="timeline-item">
-            <div class="timeline-card">
-                <span class="role-title">Cloud Engineer / Incident Manager – Co-op</span>
-                <span class="company-name">HOOPP</span>
-                <span class="date-range">Nov 2024 – Apr 2025</span>
-                <ul>
-                    <li>Helped manage high-impact incidents (P1/P2), coordinating teams and facilitating communication.</li>
-                    <li>Logged incidents and changes in ServiceNow and Azure DevOps.</li>
-                    <li>Participated in CAB meetings, change evaluations, and led post-incident follow-ups.</li>
-                    <li>Monitored service performance via AppDynamics/Splunk and flagged early warnings.</li>
-                    <li>Built and improved Power BI dashboards for ITSM metrics and trends.</li>
-                    <li>Gained exposure to BCM/DR, root cause investigations, and stakeholder communications.</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <span class="role-title">Cloud Engineer / Incident Manager – Co-op</span>
+                    <span class="company-name">HOOPP | Nov 2024 – Apr 2025</span>
+                    <ul>
+                        <li>Managed high-impact incidents coordinating technical teams and stakeholders.</li>
+                        <li>Logged incidents and changes in ServiceNow and Azure DevOps.</li>
+                        <li>Participated in CAB meetings and post-incident investigations.</li>
+                        <li>Monitored system health with Splunk and AppDynamics.</li>
+                        <li>Improved Power BI dashboards for ITSM metrics visualization.</li>
+                        <li>Assisted in BCM/DR planning and root cause analysis.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- OTHER EXPERIENCE -->
-        <div class="timeline-item">
-            <div class="timeline-card">
-                <span class="role-title">IT Assistance (Part-Time)</span>
-                <span class="company-name">DEX Technology</span>
-                <span class="date-range">Nov 2023 – Nov 2024</span>
-                <ul>
-                    <li>Provided frontline IT support, achieving a 90% first-contact resolution rate.</li>
-                    <li>Diagnosed hardware/software issues and optimized infrastructure, improving efficiency by 20%.</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <span class="role-title">IT Assistance</span>
+                    <span class="company-name">DEX Technology | Nov 2023 – Nov 2024</span>
+                    <ul>
+                        <li>Provided first-contact IT support with 90% resolution rate.</li>
+                        <li>Diagnosed hardware/software issues efficiently.</li>
+                        <li>Optimized infrastructure improving operational efficiency by 20%.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-card">
-                <span class="role-title">Fire Prevention and Site Security Supervisor</span>
-                <span class="company-name">Stellantis Canada</span>
-                <span class="date-range">May 2020 – Apr 2025</span>
-                <ul>
-                    <li>Supervised security teams and coordinated site-wide safety measures.</li>
-                    <li>Analyzed incident data to reduce security breaches by 35% through improved response protocols.</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <span class="role-title">Fire Prevention & Site Security Supervisor</span>
+                    <span class="company-name">Stellantis Canada | May 2020 – Apr 2025</span>
+                    <ul>
+                        <li>Supervised site-wide security operations and high-performing teams.</li>
+                        <li>Reduced security breaches by 35% through analysis and process improvements.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-card">
-                <span class="role-title">Research Associate</span>
-                <span class="company-name">Social Council of Peel</span>
-                <span class="date-range">Dec 2020 – Apr 2021</span>
-                <ul>
-                    <li>Conducted in-depth research and improved client records and retention through analysis.</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <span class="role-title">Research Associate</span>
+                    <span class="company-name">Social Council of Peel | Dec 2020 – Apr 2021</span>
+                    <ul>
+                        <li>Conducted in-depth research to improve client data records and retention.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<div class="section-container">
-    <h2>Technical Projects</h2>
-    <p>Selected projects demonstrating cloud, Linux, and networking expertise.</p>
-    <div class="projects-grid">
-
-        <div class="project-card">
-            <div class="project-body">
-                <div class="project-icon"><i class="fab fa-aws"></i></div>
+<section id="projects" class="bg-light">
+    <div class="section-container">
+        <h2>Technical Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
                 <div class="project-title">Secure AWS Infrastructure</div>
-                <p class="project-desc">Designed a scalable AWS environment focused on security, networking, and cloud best practices:</p>
-                <ul>
-                    <li>Implemented private VPCs and EC2 instances with secure IAM roles.</li>
-                    <li>Configured internal load balancers and Route 53 DNS for private web access.</li>
-                    <li>Deployed VPC peering for secure communication between network segments.</li>
-                </ul>
+                <div class="project-desc">
+                    <ul>
+                        <li>Designed secure, scalable AWS environment including VPCs, EC2, S3, IAM.</li>
+                        <li>Implemented internal load balancers and Route 53 DNS for private access.</li>
+                        <li>Configured IAM roles and permissions for secure access.</li>
+                        <li>Deployed VPC peering for isolated network communication.</li>
+                    </ul>
+                </div>
                 <div>
                     <span class="tech-tag">AWS VPC</span>
                     <span class="tech-tag">EC2</span>
-                    <span class="tech-tag">IAM</span>
-                    <span class="tech-tag">Networking</span>
+                    <span class="tech-tag">Security</span>
                 </div>
             </div>
-        </div>
 
-        <div class="project-card">
-            <div class="project-body">
-                <div class="project-icon"><i class="fas fa-server"></i></div>
-                <div class="project-title">Linux Email Server</div>
-                <p class="project-desc">Deployed a Linux-based email server for internal use:</p>
-                <ul>
-                    <li>Used Roundcube with Amazon RDS for secure mail delivery.</li>
-                    <li>Configured VPC peering for secure network communication.</li>
-                    <li>Managed user permissions and roles to ensure access control compliance.</li>
-                </ul>
+            <div class="project-card">
+                <div class="project-title">Linux Email Server Implementation</div>
+                <div class="project-desc">
+                    <ul>
+                        <li>Deployed Roundcube email server using Amazon RDS.</li>
+                        <li>Configured VPC peering for secure communication between network segments.</li>
+                        <li>Implemented network and Linux security best practices.</li>
+                    </ul>
+                </div>
                 <div>
                     <span class="tech-tag">Linux</span>
                     <span class="tech-tag">RDS</span>
@@ -277,39 +266,26 @@ footer { background: var(--dark); color: #aaa; text-align: center; padding: 3rem
                 </div>
             </div>
         </div>
-
     </div>
-</div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education" class="bg-light">
-<div class="section-container">
-    <h2>Education & Certifications</h2>
-
-    <div class="edu-card">
-        <span class="role-title">Computer Systems Technology – Advanced Diploma</span>
-        <span class="company-name">Seneca College</span>
-        <span class="date-range">May 2023 – Present</span>
-        <ul>
-            <li>Awarded President's Honor List</li>
-        </ul>
+<section id="education">
+    <div class="section-container">
+        <h2>Education</h2>
+        <div class="education-card">
+            <h3>Seneca College</h3>
+            <p>Computer Systems Technology, Advanced Diploma | President’s Honor List</p>
+        </div>
+        <div class="education-card">
+            <h3>Sheridan College</h3>
+            <p>Social Service Worker Diploma | Cumulative GPA: 3.6</p>
+        </div>
     </div>
-
-    <div class="edu-card">
-        <span class="role-title">Social Service Worker Diploma</span>
-        <span class="company-name">Sheridan College</span>
-        <span class="date-range">Sept 2019 – Apr 2021</span>
-        <ul>
-            <li>Cumulative GPA: 3.6 – Faculty of Social Sciences</li>
-        </ul>
-    </div>
-
-</div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<div class="section-container">
-    <p>&copy; 2026 Harsahir Singh. All rights reserved. | <a href="mailto:singh.harsahir@gmail.com" style="color:#aaa;">Contact</a></p>
-</div>
+    <p>&copy; 2026 Harsahir Singh. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
