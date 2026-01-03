@@ -1,48 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Harsahir Singh | Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
-      background: #f9f9f9;
-    }
-    h1 { color: #333; }
-    .section { margin-bottom: 30px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsahir Singh | IT Service Management & Cloud Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --primary-blue: #0078D4; /* Azure Blue style */
+            --dark-blue: #005a9e;
+            --light-bg: #f3f2f1;
+            --white: #ffffff;
+            --text-dark: #323130;
+            --text-light: #605e5c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- HERO SECTION --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            animation: fadeIn 1.5s ease;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            margin-bottom: 4rem;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 1rem;
+        }
+
+        /* --- ABOUT --- */
+        .about-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-blue);
+            text-align: center;
+        }
+
+        .skill-category h3 { margin-bottom: 1rem; color: var(--dark-blue); }
+        .skill-tags span {
+            display: inline-block;
+            background: #e1f0fa;
+            color: var(--dark-blue);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin: 3px;
+        }
+
+        /* --- EXPERIENCE --- */
+        .timeline-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-left: 4px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .role { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); }
+        .company { color: var(--primary-blue); font-weight: 600; }
+        .date { color: var(--text-light); font-size: 0.9rem; }
+        
+        .timeline-item ul {
+            margin-left: 1.5rem;
+            list-style-type: disc;
+            color: var(--text-dark);
+        }
+
+        /* --- PROJECTS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            margin-top: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .tech-stack i { margin-right: 5px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .job-header { flex-direction: column; align-items: flex-start; }
+            .date { margin-top: 5px; }
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Harsahir Singh</h1>
-  <p>Cloud Engineer | ITSM | Linux | Azure</p>
+    <header>
+        <div class="container">
+            <img src="Harsahir Singh.jpg" alt="Harsahir Singh" class="profile-img">
+            <h1>Harsahir Singh</h1>
+            <p>Cloud Engineer | Incident Manager | IT Service Management Professional</p>
+            <div class="social-links">
+                <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </header>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      Cloud Engineer with hands-on experience in incident management,
-      Azure infrastructure, and Linux-based systems.
-    </p>
-  </div>
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-card">
+                <p>
+                    I am an aspiring IT Service Management leader and Cloud Engineer with a strong foundation in incident, change, and problem management within enterprise environments. 
+                    Currently putting my skills to work at <strong>HOOPP</strong>, I bring a governance-driven approach to service reliability while partnering closely with technical teams to drive operational excellence. 
+                    My background includes hands-on experience with <strong>Azure, AWS, and Linux</strong> systems, alongside a proven track record of resolving high-impact incidents under pressure.
+                </p>
+            </div>
+        </section>
 
-  <div class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li>Cloud Incident Automation (Azure)</li>
-      <li>Linux VM Monitoring Setup</li>
-      <li>Cyber Threat Detection Project</li>
-    </ul>
-  </div>
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <i class="fas fa-tasks fa-2x" style="color:var(--primary-blue); margin-bottom:10px;"></i>
+                    <h3>IT Service Management</h3>
+                    <div class="skill-tags">
+                        <span>Incident Management</span>
+                        <span>ServiceNow</span>
+                        <span>Azure DevOps</span>
+                        <span>Major Incident Response</span>
+                        <span>Change Management</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-cloud fa-2x" style="color:var(--primary-blue); margin-bottom:10px;"></i>
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-tags">
+                        <span>AWS (EC2, VPC, S3)</span>
+                        <span>Microsoft Azure</span>
+                        <span>IAM & Security</span>
+                        <span>Route 53</span>
+                        <span>Hybrid Cloud</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <i class="fas fa-server fa-2x" style="color:var(--primary-blue); margin-bottom:10px;"></i>
+                    <h3>Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span>Linux CLI</span>
+                        <span>Windows Server</span>
+                        <span>VMware</span>
+                        <span>Networking (VLAN, STP)</span>
+                        <span>AppDynamics / Splunk</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: singh.harsahir@gmail.com</p>
-    <p>GitHub: github.com/yourusername</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-  </div>
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div>
+                        <div class="role">Cloud Engineer / Incident Manager - Co-op</div>
+                        <div class="company">HOOPP (Healthcare of Ontario Pension Plan)</div>
+                    </div>
+                    <div class="date">Nov 2024 - Apr 2025</div>
+                </div>
+                <ul>
+                    <li>Manage high-impact incidents (P1/P2), coordinating teams and facilitating critical communication.</li>
+                    <li>Monitor service performance via AppDynamics and Splunk to flag early warnings.</li>
+                    <li>Build and improve Power BI dashboards for ITSM metrics and trends.</li>
+                    <li>Log incidents/changes in ServiceNow/Azure DevOps and participate in CAB meetings.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div>
+                        <div class="role">IT Assistance (Part-Time)</div>
+                        <div class="company">DEX Technology</div>
+                    </div>
+                    <div class="date">Nov 2023 - Nov 2024</div>
+                </div>
+                <ul>
+                    <li>Supported IT operations, resolving 90% of tickets on first contact.</li>
+                    <li>Diagnosed and resolved hardware/software issues efficiently.</li>
+                    <li>Implemented solutions that improved infrastructure efficiency by 20%.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <div>
+                        <div class="role">Fire Prevention and Site Security Supervisor</div>
+                        <div class="company">Stellantis Canada</div>
+                    </div>
+                    <div class="date">May 2020 - April 2025</div>
+                </div>
+                <ul>
+                    <li>Supervised a high-performing team and coordinated site-wide security measures.</li>
+                    <li>Improved safety response and reduced breaches by 35% through incident analysis.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon"><i class="fab fa-aws"></i></div>
+                        <div class="project-title">Secure AWS Infrastructure Design</div>
+                        <p>Designed a secure, scalable AWS infrastructure including VPCs, EC2 instances, S3 storage, and IAM roles. Implemented internal load balancers and Route 53 DNS for private web access.</p>
+                        <div class="tech-stack">
+                            <i class="fas fa-code-branch"></i> VPC, EC2, IAM, Route 53
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="project-title">Email Server Implementation</div>
+                        <p>Created a functional email server using Roundcube and Amazon RDS. Configured user permissions and successfully deployed VPC peering for secure communication between network segments.</p>
+                        <div class="tech-stack">
+                            <i class="fas fa-terminal"></i> Linux, RDS, Roundcube
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <h2>Let's Connect</h2>
+        <p>I am currently seeking full-time opportunities in IT Service Management and Cloud Engineering.</p>
+        <a href="mailto:singh.harsahir@gmail.com" class="btn">Contact Me</a>
+        <br><br>
+        <p style="font-size: 0.8rem; opacity: 0.7;">&copy; 2025 Harsahir Singh. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
