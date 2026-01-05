@@ -88,15 +88,16 @@
         .project-body ul li::before { content: "\f0c2"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--accent); font-size: 0.8rem; }
 
         /* --- EDUCATION --- */
-        .education-card { background: var(--white); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
+        .education-card { background: var(--white); padding: 2rem; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
+        .education-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
         .education-card ul li { position: relative; padding-left: 1.8rem; margin-bottom: 0.5rem; color: #555; }
         .education-card ul li::before { content: "\f0da"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--accent); font-size: 0.7rem; }
 
         /* --- CTA --- */
         .cta { background: var(--primary); color: #fff; text-align: center; padding: 4rem 2rem; border-radius: 8px; margin-top: 4rem; }
-        .cta h2 { color: #ffffff; border-bottom: none; margin-bottom: 1rem; }
-        .cta h2::after { display: none; } /* Hide the green bar inside CTA */
-        .cta p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; }
+        .cta h2 { color: #ffffff !important; border-bottom: none; margin-bottom: 1rem; }
+        .cta h2::after { display: none; }
+        .cta p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.95; }
         .cta a { color: #fff; font-weight: 700; font-size: 1.1rem; display: inline-block; border: 2px solid #fff; padding: 0.7rem 1.5rem; border-radius: 4px; transition: 0.3s; }
         .cta a:hover { background: #fff; color: var(--primary); }
 
@@ -142,7 +143,7 @@
     <header class="hero" id="about">
         <div class="hero-text">
             <h1>Manager, IT Service Management</h1>
-            <p>Bridging the gap between technical infrastructure and ITSM leadership, I specialize in driving reliability, operational excellence, and data-informed strategies across complex environments. With a foundation in engineering, I now lead initiatives that optimize performance, streamline processes, and empower teams to achieve results in high-pressure situations.</p>
+            <p>Bridging the gap between technical infrastructure and ITSM leadership, I specialize in driving reliability, operational excellence, and data-informed strategies across complex environments. With a foundation in engineering, I lead initiatives that optimize performance and empower teams in high-pressure situations.</p>
             <div class="social-icons">
                 <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -164,10 +165,10 @@
                         <span class="company-name"> Healthcare of Ontario Pension Plan (HOOPP) </span>
                         <span class="date-range">Sept 2025 – Present</span>
                         <ul>
-                            <li>Lead ITSM operations including incident, change, and problem management.</li>
-                            <li>Coordinate cross-functional teams for high-impact (P1/P2) incidents.</li>
-                            <li>Manage CAB meetings, post-incident reviews, and governance communications.</li>
-                            <li>Develop KPI Power BI dashboards for reporting metrics and operational insights.</li>
+                            <li>Lead ITSM operations including incident, change, and problem management for 1,000+ IT users.</li>
+                            <li>Coordinate cross-functional teams for high-impact (P1/P2) incidents and post-incident reviews.</li>
+                            <li>Develop KPI Power BI dashboards for operational reporting and service reliability trends.</li>
+                            <li>Mentor team members to build ITSM maturity and process efficiency.</li>
                         </ul>
                     </div>
                 </div>
@@ -178,9 +179,9 @@
                         <span class="company-name">Healthcare of Ontario Pension Plan (HOOPP)</span>
                         <span class="date-range">Nov 2024 – Apr 2025</span>
                         <ul>
-                            <li>Managed P1/P2 incidents for IT infrastructure supporting 1,000+ users.</li>
-                            <li>Logged and tracked incidents and changes using ServiceNow and Azure DevOps.</li>
-                            <li>Monitored services via AppDynamics and Splunk.</li>
+                            <li>Managed P1/P2 incidents for IT infrastructure using ServiceNow and Azure DevOps.</li>
+                            <li>Monitored services via AppDynamics and Splunk to flag early infrastructure warnings.</li>
+                            <li>Optimized ITSM reporting using Power BI to visualize incident lifecycle metrics.</li>
                         </ul>
                     </div>
                 </div>
@@ -191,8 +192,8 @@
                         <span class="company-name">DEX Technology</span>
                         <span class="date-range">Nov 2023 – Nov 2024</span>
                         <ul>
-                            <li>Provided frontline IT support with 90% first-contact resolution rate.</li>
-                            <li>Diagnosed and resolved hardware/software issues efficiently.</li>
+                            <li>Provided frontline IT support with a focus on hardware/software diagnostics and resolution.</li>
+                            <li>Implemented infrastructure efficiency improvements of approximately 20%.</li>
                         </ul>
                     </div>
                 </div>
@@ -207,9 +208,8 @@
                 <div class="skill-card">
                     <h3>ITSM & Governance</h3>
                     <ul>
-                        <li>Incident Management</li>
-                        <li>Change Management</li>
-                        <li>Problem Management</li>
+                        <li>Incident & Change Mgmt</li>
+                        <li>Problem Analysis (RCA)</li>
                         <li>ServiceNow</li>
                         <li>PagerDuty</li>
                     </ul>
@@ -217,18 +217,19 @@
                 <div class="skill-card">
                     <h3>Cloud & Infrastructure</h3>
                     <ul>
-                        <li>AWS (EC2, VPC, S3, IAM)</li>
-                        <li>Microsoft Azure (VNet, Bastion, Load Balancers)</li>
+                        <li>AWS (EC2, VPC, IAM, S3)</li>
+                        <li>Microsoft Azure (VNet, Bastion)</li>
                         <li>Linux / Unix Systems</li>
-                        <li>Cisco Networking</li>
+                        <li>Cisco Networking (VLANs, ACL)</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Observability & Tools</h3>
                     <ul>
                         <li>Splunk & AppDynamics</li>
-                        <li>Power BI & Dashboarding</li>
-                        <li>Monitoring & Reporting</li>
+                        <li>Power BI Dashboarding</li>
+                        <li>Windows Server Infrastructure</li>
+                        <li>VMware / VirtualBox</li>
                     </ul>
                 </div>
             </div>
@@ -245,9 +246,10 @@
                         <span class="project-icon"><i class="fab fa-aws"></i></span>
                         <h3 class="project-title">AWS Secure Cloud Deployment</h3>
                         <ul>
-                            <li>Designed a highly available AWS VPC architecture.</li>
-                            <li>Utilized Systems Manager for secure EC2 access.</li>
-                            <li>Implemented internal load balancers and Route 53.</li>
+                            <li><strong>High Availability:</strong> Engineered multi-tier VPC across multiple AZs for 99.9% uptime.</li>
+                            <li><strong>Security:</strong> Implemented <strong>AWS Systems Manager (SSM)</strong> to eliminate public SSH ports.</li>
+                            <li><strong>Governance:</strong> Enforced least-privilege via IAM Roles for RDS and S3 bucket security.</li>
+                            <li><strong>DNS:</strong> Deployed Application Load Balancers and Route 53 private hosted zones.</li>
                         </ul>
                     </div>
                 </div>
@@ -258,9 +260,9 @@
                         <span class="project-icon"><i class="fab fa-microsoft"></i></span>
                         <h3 class="project-title">Azure Infrastructure Optimization</h3>
                         <ul>
-                            <li>Designed and implemented VNet, subnets, and domain controllers.</li>
-                            <li>Leveraged Azure Bastion Host for secure remote access.</li>
-                            <li>Established Virtual Network Peering.</li>
+                            <li><strong>Topology:</strong> Designed Hub-and-Spoke network architecture using <strong>VNet Peering</strong>.</li>
+                            <li><strong>Connectivity:</strong> Integrated <strong>Azure Bastion</strong> for secure RDP/SSH access over SSL.</li>
+                            <li><strong>Identity:</strong> Synchronized <strong>Azure AD (Entra ID)</strong> with Domain Controllers for RBAC.</li>
                         </ul>
                     </div>
                 </div>
@@ -272,12 +274,21 @@
         <div class="section-container">
             <h2>Education</h2>
             <div class="education-card">
-                <span class="role-title">Seneca College – Computer Systems Technology</span>
+                <h3>Seneca College – Computer Systems Technology (Advanced Diploma)</h3>
                 <span class="date-range">May 2023 – Present</span>
+                <ul>
+                    <li><strong>Infrastructure:</strong> Coursework in Windows Server (AD, GPO, DNS/DHCP) and Linux hardening.</li>
+                    <li><strong>Virtualization:</strong> Built virtual data centers using <strong>VMware ESXi</strong> for resource scaling.</li>
+                    <li><strong>Networking:</strong> Configured Cisco IOS devices for VLANs, STP, and enterprise-grade ACL security.</li>
+                </ul>
             </div>
             <div class="education-card">
-                <span class="role-title">Sheridan College – Social Service Worker</span>
+                <h3>Sheridan College – Social Service Worker Diploma</h3>
                 <span class="date-range">Sept 2019 – Apr 2021</span>
+                <ul>
+                    <li>Academic Honors | Cumulative GPA: 3.6</li>
+                    <li>Developed strong crisis intervention and high-pressure leadership communication skills.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -298,19 +309,10 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
-        function openModal(img) {
-            document.getElementById("imgModal").style.display = "block";
-            document.getElementById("modalImage").src = img.src;
-        }
-        function closeModal() {
-            document.getElementById("imgModal").style.display = "none";
-        }
-        window.onclick = function(event) {
-            if(event.target == document.getElementById("imgModal")) closeModal();
-        }
+        function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
+        function openModal(img) { document.getElementById("imgModal").style.display = "block"; document.getElementById("modalImage").src = img.src; }
+        function closeModal() { document.getElementById("imgModal").style.display = "none"; }
+        window.onclick = function(event) { if(event.target == document.getElementById("imgModal")) closeModal(); }
     </script>
 
 </body>
