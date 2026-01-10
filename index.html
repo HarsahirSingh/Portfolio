@@ -132,7 +132,7 @@
             object-fit: cover; 
             box-shadow: var(--shadow-lg);
             border: 8px solid var(--white);
-            background: linear-gradient(135deg, #009944 0%, #007f5f 100%);
+            background: #eee; /* Fallback color */
         }
         .social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
         .social-icons a { 
@@ -374,12 +374,8 @@
             object-fit: cover; 
             cursor: pointer;
             transition: transform 0.3s;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
+            border-bottom: 1px solid var(--border);
+            display: block;
         }
         .project-card:hover .project-img {
             transform: scale(1.05);
@@ -532,7 +528,7 @@
                 <a href="#projects" onclick="toggleMenu()">Projects</a>
                 <a href="#skills" onclick="toggleMenu()">Skills</a>
                 <a href="#education" onclick="toggleMenu()">Education</a>
-                <a href="#" class="btn-resume">
+                <a href="Harsahir_Singh_Resume.pdf" target="_blank" class="btn-resume">
                     <i class="fas fa-download"></i> Resume
                 </a>
             </div>
@@ -552,7 +548,7 @@
                 </div>
             </div>
             <div>
-                <div class="hero-img"></div>
+                <img src="Harsahir Singh.jpg" alt="Harsahir Singh" class="hero-img">
             </div>
         </div>
     </header>
@@ -573,7 +569,6 @@
             </div>
             <div class="stat-item">
                 <h3>Co-op → Manager</h3>
-                <p>Without Applying</p>
             </div>
         </div>
     </div>
@@ -699,8 +694,9 @@
             <h2>Technical Projects</h2>
             <p class="section-subtitle">Hands-on cloud infrastructure projects demonstrating security-first architecture and enterprise best practices.</p>
             <div class="projects-grid">
+                
                 <div class="project-card">
-                    <div class="project-img"><i class="fab fa-aws"></i></div>
+                    <img src="aws-project.PNG" alt="AWS Cloud Project" class="project-img">
                     <div class="project-body">
                         <span class="project-icon"><i class="fab fa-aws"></i></span>
                         <h3 class="project-title">AWS Secure Cloud Deployment</h3>
@@ -713,7 +709,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-img"><i class="fab fa-microsoft"></i></div>
+                    <img src="ms-project.PNG" alt="Azure Infrastructure Project" class="project-img">
                     <div class="project-body">
                         <span class="project-icon"><i class="fab fa-microsoft"></i></span>
                         <h3 class="project-title">Azure Infrastructure Optimization</h3>
@@ -724,6 +720,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
