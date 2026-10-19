@@ -6,7 +6,7 @@
     <meta name="description" content="Harsahir Singh — IT Service Management Manager, ITIL 5 Foundation certified. Full-lifecycle ITSM leadership: major incident response, change governance, and problem management.">
     <title>Harsahir Singh | IT Service Management Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1e3a8a;
@@ -371,13 +371,141 @@
             transition: transform 0.3s;
         }
         .diagram-img:hover { transform: scale(1.01); }
+        /* ---- Concept Demo A: story modules grafted onto the live design ---- */
+        .build-band { background: linear-gradient(135deg, #16295e 0%, #1e3a8a 100%); color: #fff; padding: 5rem 0; }
+        .band-kicker { font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .3em; color: #f59e0b; margin-bottom: 1rem; }
+        .build-band h2 { color: #fff; font-size: 2.2rem; margin-bottom: .6rem; }
+        .build-band h2 span { color: #f59e0b; }
+        .band-sub { color: #c7d4ee; max-width: 62ch; margin: 0 auto 3rem; text-align: center; }
+        .build-band .section-container > .band-kicker, .build-band h2 { text-align: center; }
+        .build-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .build-step { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 12px; padding: 1.8rem; transition: transform .3s, background .3s; }
+        .build-step:hover { transform: translateY(-6px); background: rgba(255,255,255,.1); }
+        .step-no { font-family: 'JetBrains Mono', monospace; color: #f59e0b; font-size: .8rem; letter-spacing: .2em; }
+        .build-step h3 { color: #fff; margin: .8rem 0 .6rem; font-size: 1.15rem; }
+        .build-step p { color: #c7d4ee; font-size: .92rem; }
+        #leadership { padding: 5rem 0; }
+        .lead-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .lead-flip { perspective: 1200px; cursor: pointer; }
+        .lead-flip:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
+        .lead-flip-inner { position: relative; width: 100%; min-height: 320px;
+            transition: transform .65s cubic-bezier(.2,.7,.3,1.15); transform-style: preserve-3d; }
+        .lead-flip.flipped .lead-flip-inner { transform: rotateY(180deg); }
+        .lead-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+            background: #fff; border-radius: 12px; padding: 2rem 1.6rem; border-top: 4px solid var(--accent);
+            box-shadow: var(--shadow-md); display: flex; flex-direction: column; align-items: center;
+            justify-content: center; text-align: center; }
+        .lead-face.back { transform: rotateY(180deg); border-top-color: var(--primary); }
+        .lead-emoji { font-size: 2.6rem; margin-bottom: 1rem; line-height: 1; }
+        .lead-face h3 { font-size: 1.12rem; margin-bottom: .4rem; }
+        .lead-hint { font-family: 'JetBrains Mono', monospace; font-size: .64rem; letter-spacing: .18em;
+            color: var(--accent); margin-top: .9rem; }
+        .lead-face.back p { color: #555; font-size: .92rem; }
+        .lead-proof-tag { font-family: 'JetBrains Mono', monospace; font-size: .62rem; letter-spacing: .14em;
+            color: var(--primary); margin-top: 1.1rem; border: 1px solid var(--border);
+            padding: .4rem .9rem; border-radius: 20px; background: var(--light-bg); }
+        .skill-emoji { font-size: 1.9rem; margin-bottom: .8rem; line-height: 1; }
+        @media (max-width: 900px) { .build-steps, .lead-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .build-steps, .lead-grid { grid-template-columns: 1fr; } }
+        /* ---- Demo A v2: interaction layer (UX upgrade, content untouched) ---- */
+        #progressBar { position: fixed; top: 0; left: 0; height: 3px; width: 0;
+            background: linear-gradient(90deg, var(--primary), var(--accent)); z-index: 1000; }
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+        section[id], header[id] { scroll-margin-top: 84px; }
+        .nav-links a { position: relative; transition: color .25s; }
+        .nav-links a.active { color: var(--accent); font-weight: 700; }
+        /* HOOPP Build stepper */
+        .build-stepper { max-width: 880px; margin: 0 auto; }
+        .stepper-nav { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.4rem; }
+        .stepper-btn { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); color: #dbe5f7;
+            border-radius: 10px; padding: .8rem 1.2rem; cursor: pointer;
+            font-family: 'JetBrains Mono', monospace; font-size: .78rem; transition: .25s;
+            display: flex; gap: .6rem; align-items: center; }
+        .stepper-btn span { color: #f59e0b; font-weight: 700; }
+        .stepper-btn:hover { background: rgba(255,255,255,.13); }
+        .stepper-btn.active { background: #f59e0b; border-color: #f59e0b; color: #1a1005; }
+        .stepper-btn.active span { color: #1a1005; }
+        .stepper-track { height: 4px; background: rgba(255,255,255,.14); border-radius: 3px; overflow: hidden; margin-bottom: 2rem; }
+        .stepper-track i { display: block; height: 100%; width: 25%; background: #f59e0b; border-radius: 3px; transition: width .5s ease; }
+        .stepper-panel { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+            border-radius: 14px; padding: 2.2rem; min-height: 196px; text-align: center; }
+        .stepper-panel h3 { color: #fff; font-size: 1.5rem; margin-bottom: .8rem; }
+        .stepper-panel p { color: #c7d4ee; max-width: 60ch; margin: 0 auto; }
+        .stepper-panel.fade { animation: fadein .4s ease; }
+        @keyframes fadein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        /* Experience accordion */
+        .tl-toggle { all: unset; display: block; width: 100%; cursor: pointer; box-sizing: border-box; }
+        .tl-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
+        .tl-chev { float: right; color: var(--accent); font-weight: 700; font-size: 1.1rem; transition: transform .3s; margin-left: 1rem; }
+        .timeline-item.open .tl-chev { transform: rotate(180deg); }
+        .tl-body { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+        /* AI agent phase tabs */
+        .phase-tab-btns { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+        .phase-tab-btn { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: .7rem 1.1rem;
+            cursor: pointer; font-size: .85rem; font-weight: 600; color: var(--primary); transition: .25s; }
+        .phase-tab-btn:hover { border-color: var(--primary); }
+        .phase-tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .phase-panel { display: none; margin-top: 1.2rem; color: #444; line-height: 1.7; }
+        .phase-panel.active { display: block; animation: fadein .4s ease; }
+        /* Back to top */
+        #toTop { position: fixed; right: 26px; bottom: 26px; width: 48px; height: 48px; border-radius: 50%;
+            background: var(--primary); color: #fff; border: none; font-size: 1.3rem; cursor: pointer;
+            opacity: 0; pointer-events: none; transform: translateY(12px); transition: .3s; z-index: 900;
+            box-shadow: var(--shadow-md); }
+        #toTop.show { opacity: 1; pointer-events: auto; transform: none; }
+        #toTop:hover { background: var(--accent); }
+        /* Micro-interactions */
+        .skill-card { transition: transform .3s, box-shadow .3s; }
+        .skill-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .btn-contact { transition: transform .25s, box-shadow .25s, background .25s; display: inline-block; }
+        .btn-contact:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .project-img { transition: transform .5s ease; }
+        /* ---- Demo A v2.1: synced interactivity across the whole page ---- */
+        .tl-toggle { text-align: left; }
+        .tl-text { flex: 1; min-width: 0; }
+        .tl-emoji { font-size: 1.7rem; line-height: 1; flex-shrink: 0; }
+        .gov-emoji { margin-right: .55rem; }
+        .highlight-box ul li.has-emoji::before { display: none; }
+        .tier-label { grid-column: 1 / -1; font-family: 'JetBrains Mono', monospace; font-size: .7rem;
+            letter-spacing: .22em; color: var(--accent); margin: 1.4rem 0 -.4rem; text-align: center; }
+        .tier-label.dim { color: var(--muted); }
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
+        @media (max-width: 700px) { .edu-grid { grid-template-columns: 1fr; } }
+        .lead-face.back ul { list-style: none; text-align: left; color: #555; font-size: .9rem; }
+        .lead-face.back li { padding: .3rem 0; }
+        .decisions-toggle { background: none; border: 1px solid var(--border); border-radius: 8px;
+            padding: .6rem 1rem; cursor: pointer; font-size: .82rem; font-weight: 600; color: var(--primary);
+            margin-top: 1rem; transition: .25s; font-family: 'Inter', sans-serif; }
+        .decisions-toggle:hover { border-color: var(--primary); }
+        .decisions-toggle span { display: inline-block; transition: transform .3s; }
+        .decisions-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
+        .decisions-body { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+        .decisions-body ul { list-style: none; margin-top: .8rem; }
+        .decisions-body li { font-size: .88rem; color: #555; padding: .4rem 0; line-height: 1.6; }
+        /* Key Achievement milestone rail */
+        .ka-wrap { margin-top: 1.6rem; }
+        .ka-rail { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+        .ka-node { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: #fff;
+            border-radius: 10px; padding: .7rem 1rem; cursor: pointer; font-size: .85rem; font-weight: 600;
+            transition: .25s; display: flex; gap: .5rem; align-items: center; font-family: 'Inter', sans-serif; }
+        .ka-node:hover { background: rgba(255,255,255,.2); }
+        .ka-node.active { background: #fff; color: var(--primary); border-color: #fff; }
+        .ka-arrow { color: rgba(255,255,255,.55); align-self: center; font-size: 1.15rem; line-height: 1; }
+        .ka-panel { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+            border-radius: 12px; padding: 1.6rem 1.8rem; min-height: 132px; }
+        .ka-panel h4 { color: #fff; font-size: 1.05rem; margin-bottom: .5rem; }
+        .ka-panel p { color: #e6ebf7; font-size: .95rem; line-height: 1.7; }
+        .ka-panel.fade { animation: fadein .4s ease; }
 
         /* Skills Grid */
         .skills-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(2, 1fr); 
             gap: 2rem; 
         }
+        @media (max-width: 700px) { .skills-grid { grid-template-columns: 1fr; } }
         .skill-card { 
             background: var(--white); 
             padding: 2rem; 
@@ -702,15 +830,46 @@
                 <p>Change Advisory Board (CAB)</p>
             </div>
             <div class="stat-item">
-                <h3>30-min</h3>
+                <h3><span class="count" data-target="30">0</span>-min</h3>
                 <p>Leadership Comms Cadence</p>
             </div>
             <div class="stat-item">
-                <h3>5+ yrs</h3>
+                <h3><span class="count" data-target="5">0</span>+ yrs</h3>
                 <p>Incident Command Experience</p>
             </div>
         </div>
     </div>
+
+    <!-- CONCEPT DEMO A: "The HOOPP Build" story band grafted onto the live design -->
+    <section class="build-band">
+        <div class="section-container">
+            <p class="band-kicker">THE HOOPP BUILD · A STORY IN FOUR ACTS</p>
+            <h2>From co-op to the manager's chair <span>in under a year.</span></h2>
+            <p class="band-sub">Titles don't tell stories. This is how a co-op placement became an ITSM leadership role — and what it proves about how I lead.</p>
+            <div class="build-steps">
+                <div class="build-step">
+                    <span class="step-no">ACT 01</span>
+                    <h3>The Assessment</h3>
+                    <p>We saw it plainly: HOOPP had no structured major-incident function. Bridges were ad hoc, comms were chaos, and no one owned the timeline — and the organization felt it.</p>
+                </div>
+                <div class="build-step">
+                    <span class="step-no">ACT 02</span>
+                    <h3>The Foundation</h3>
+                    <p>Together we built the bones: incident command protocols, runbooks, coordination rhythms, a 30-minute comms cadence. I brought five years of crisis leadership; the teams brought the expertise.</p>
+                </div>
+                <div class="build-step">
+                    <span class="step-no">ACT 03</span>
+                    <h3>The Results</h3>
+                    <p>P1/P2 bridges ran with discipline. Post-incident reviews tracked corrective actions to closure. The function worked — because a team owned it.</p>
+                </div>
+                <div class="build-step">
+                    <span class="step-no">ACT 04</span>
+                    <h3>The Mandate</h3>
+                    <p>HOOPP invited me back as Manager, IT Service Management — to keep leading what we had built together. Co-op to manager in under a year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="experience">
         <div class="section-container">
@@ -720,11 +879,11 @@
             <div class="highlight-box">
                 <h3><i class="fas fa-trophy"></i> Key Achievement: Helped Build HOOPP's Incident Management Function</h3>
                 <ul>
-                    <li><strong>Identified organizational gap:</strong> During my cloud engineering co-op, I recognized HOOPP needed more structured major incident coordination</li>
+                    <li><strong>Saw the gap as an organization:</strong> We recognized HOOPP needed more structured major incident coordination — so we set out to build it</li>
                     <li><strong>Applied transferable skills:</strong> Drew on five years of fire prevention and site security leadership to help develop incident command protocols</li>
-                    <li><strong>Collaborated on framework:</strong> Worked with teams to create runbooks and cross-functional coordination processes</li>
+                    <li><strong>Built the framework together:</strong> We created runbooks and cross-functional coordination processes as a team</li>
                     <li><strong>Invited back as Manager:</strong> My ability to bridge technical work with crisis leadership led HOOPP to bring me back as full-time ITSM Manager</li>
-                    <li><strong>Own full lifecycle:</strong> Now manage all major incidents from initial response through PIR publication — and govern the changes that prevent the next one</li>
+                    <li><strong>Own the full lifecycle:</strong> As part of HOOPP's ITSM team, I help manage major incidents from initial response through PIR publication — and govern the changes that prevent the next one</li>
                 </ul>
             </div>
 
@@ -818,10 +977,73 @@
         </div>
     </section>
 
+    <!-- CONCEPT DEMO A: "How I lead" strip grafted onto the live design -->
+    <section id="leadership">
+        <div class="section-container">
+            <h2>How I lead</h2>
+            <p class="section-subtitle">I'm a manager: I lead people through incidents, not just processes. Four principles, each with proof.</p>
+            <div class="lead-grid">
+                <div class="lead-flip" tabindex="0" role="button" aria-label="Lead under pressure — activate to see the proof">
+                    <div class="lead-flip-inner">
+                        <div class="lead-face front">
+                            <div class="lead-emoji">🛡️</div>
+                            <h3>Lead under pressure</h3>
+                            <div class="lead-hint">VIEW DETAILS →</div>
+                        </div>
+                        <div class="lead-face back">
+                            <p>Panic scales faster than incidents. I stay calm so the bridge stays calm — the team takes its temperature from its commander. Five years of fireground leadership taught me that first.</p>
+                            <div class="lead-proof-tag">✓ 5+ YRS CRISIS LEADERSHIP</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-flip" tabindex="0" role="button" aria-label="Transparency on cadence of communication — activate to see the proof">
+                    <div class="lead-flip-inner">
+                        <div class="lead-face front">
+                            <div class="lead-emoji">📡</div>
+                            <h3>Transparency on cadence of communication</h3>
+                            <div class="lead-hint">VIEW DETAILS →</div>
+                        </div>
+                        <div class="lead-face back">
+                            <p>Leadership updates every 30 minutes — news or no news. When the business always knows what I know, trust compounds and nobody needs to escalate around me.</p>
+                            <div class="lead-proof-tag">✓ 30-MIN COMMS CADENCE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-flip" tabindex="0" role="button" aria-label="Collaborative review and growth together — activate to see the proof">
+                    <div class="lead-flip-inner">
+                        <div class="lead-face front">
+                            <div class="lead-emoji">🔍</div>
+                            <h3>Collaborative review and growth together</h3>
+                            <div class="lead-hint">VIEW DETAILS →</div>
+                        </div>
+                        <div class="lead-face back">
+                            <p>Post-incident reviews within 48 hours — collaborative, never finger-pointing. Every corrective action gets an owner and a date, and we grow together by tracking each one to closure.</p>
+                            <div class="lead-proof-tag">✓ PIRs TRACKED TO CLOSURE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-flip" tabindex="0" role="button" aria-label="Consistency is how you become better — activate to see the proof">
+                    <div class="lead-flip-inner">
+                        <div class="lead-face front">
+                            <div class="lead-emoji">🤝</div>
+                            <h3>Consistency is how you become better</h3>
+                            <div class="lead-hint">VIEW DETAILS →</div>
+                        </div>
+                        <div class="lead-face back">
+                            <p>Weekly CAB, freeze discipline, audit-ready records in ServiceNow. Trust is built before the incident, not during it.</p>
+                            <div class="lead-proof-tag">✓ WEEKLY CAB GOVERNANCE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <div class="section-container">
             <h2>Technical Skills &amp; Tools</h2>
             <div class="skills-grid">
+                <p class="tier-label">★ WHERE I LEAD — CORE STRENGTHS</p>
                 <div class="skill-card">
                     <h3><i class="fas fa-tasks"></i> ITSM &amp; Governance</h3>
                     <ul>
@@ -897,6 +1119,14 @@
                             <li><strong>Private Access:</strong> Systems Manager–based access, internal load balancing, and VPC peering</li>
                             <li><strong>Email Workload:</strong> Deployed a Roundcube email server on Amazon RDS with IAM role-based access</li>
                         </ul>
+                        <button class="decisions-toggle" aria-expanded="false">Why this design <span>▾</span></button>
+                        <div class="decisions-body">
+                            <ul>
+                                <li><strong>Private by default:</strong> workloads live in private subnets with SSM-based access — no bastion hosts, no public SSH.</li>
+                                <li><strong>Managed data layer:</strong> RDS backs the Roundcube workload — automated backups and patching, no self-managed database.</li>
+                                <li><strong>Segmented &amp; resilient:</strong> VPC peering plus internal load balancing keeps traffic isolated with no single point of exposure.</li>
+                            </ul>
+                        </div>
                         <!-- TODO: Add the project date here, e.g. <span class="date-range">2025</span> -->
                     </div>
                 </div>
@@ -909,6 +1139,14 @@
                             <li><strong>Operations:</strong> Configured host scaling settings, RBAC, and agent updates</li>
                             <li><strong>Monitoring:</strong> Enabled diagnostics with Azure Monitor and Log Analytics</li>
                         </ul>
+                        <button class="decisions-toggle" aria-expanded="false">Why this design <span>▾</span></button>
+                        <div class="decisions-body">
+                            <ul>
+                                <li><strong>Identity-first access:</strong> Entra-joined session hosts — conditional access policies apply to every desktop.</li>
+                                <li><strong>Elastic cost control:</strong> scaling plans power hosts with demand — performance without idle waste.</li>
+                                <li><strong>Least-privilege operations:</strong> RBAC-scoped administration with full diagnostics in Azure Monitor.</li>
+                            </ul>
+                        </div>
                         <!-- TODO: Add the project date here, e.g. <span class="date-range">2025</span> -->
                     </div>
                 </div>
@@ -919,22 +1157,42 @@
     <section id="education" style="background: var(--light-bg);">
         <div class="section-container">
             <h2>Education</h2>
-            <div class="education-card">
-                <h3>Seneca Polytechnic — Computer Systems Technology (Advanced Diploma)</h3>
-                <span class="date-range">May 2023 – Present</span>
-                <ul>
-                    <li>President's Honour List</li>
-                    <li>Specialization: Cloud Infrastructure Associate</li>
-                    <li>Built virtual data centers using VMware ESXi for resource scaling</li>
-                </ul>
-            </div>
-            <div class="education-card">
-                <h3>Sheridan College – Social Service Worker Diploma</h3>
-                <span class="date-range">September 2019 – April 2021</span>
-                <ul>
-                    <li>Academic Honors | Cumulative GPA: 3.6</li>
-                    <li>Developed crisis intervention and high-pressure communication skills</li>
-                </ul>
+            <div class="edu-grid">
+                <div class="lead-flip" tabindex="0" role="button" aria-label="Seneca Polytechnic — activate for details">
+                    <div class="lead-flip-inner">
+                        <div class="lead-face front">
+                            <div class="lead-emoji">🎓</div>
+                            <h3>Seneca Polytechnic</h3>
+                            <p style="color:var(--muted);font-size:.85rem">Computer Systems Technology<br>Advanced Diploma · May 2023 – Present</p>
+                            <div class="lead-hint">VIEW DETAILS →</div>
+                        </div>
+                        <div class="lead-face back">
+                            <ul>
+                                <li>★ President's Honour List</li>
+                                <li>★ Cloud Infrastructure Associate specialization</li>
+                                <li>★ Built virtual data centers with VMware ESXi</li>
+                            </ul>
+                            <div class="lead-proof-tag">✓ PRESIDENT'S HONOUR LIST</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-flip" tabindex="0" role="button" aria-label="Sheridan College — activate for details">
+                    <div class="lead-flip-inner">
+                        <div class="lead-face front">
+                            <div class="lead-emoji">🎓</div>
+                            <h3>Sheridan College</h3>
+                            <p style="color:var(--muted);font-size:.85rem">Social Service Worker Diploma<br>September 2019 – April 2021</p>
+                            <div class="lead-hint">VIEW DETAILS →</div>
+                        </div>
+                        <div class="lead-face back">
+                            <ul>
+                                <li>★ Academic Honors · GPA 3.6</li>
+                                <li>★ Crisis intervention &amp; high-pressure communication skills</li>
+                            </ul>
+                            <div class="lead-proof-tag">✓ WHERE THE CALM COMES FROM</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cta">
                 <h2>Let's Connect</h2>
@@ -977,6 +1235,309 @@
             lightbox.classList.remove('active');
             document.body.style.overflow = 'auto'; // Resume scrolling
         }
+    </script>
+    <script>
+    /* ============ Demo A v2 — interaction layer ============ */
+    (function(){
+      'use strict';
+
+      /* ---- shared: progress bar + back-to-top elements ---- */
+      document.body.insertAdjacentHTML('afterbegin', '<div id="progressBar"></div>');
+      document.body.insertAdjacentHTML('beforeend', '<button id="toTop" aria-label="Back to top">↑</button>');
+      var toTop = document.getElementById('toTop');
+      toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+      /* ---- 1. scroll choreography: reveals ---- */
+      var revealEls = document.querySelectorAll(
+        '.stat-item, .timeline-item, .skill-card, .project-card, .lead-flip, ' +
+        '.build-band .section-container > h2, .highlight-box, .initiative-card, .diagram-img');
+      revealEls.forEach(function(el){ el.classList.add('reveal'); });
+      var rio = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); rio.unobserve(e.target); } });
+      }, {threshold:.12});
+      revealEls.forEach(function(el){ rio.observe(el); });
+
+      /* ---- 2. animated stat counters ---- */
+      function runCounter(el){
+        if(el.dataset.done) return; el.dataset.done = '1';
+        var target = +el.dataset.target, dur = 1400, t0 = performance.now();
+        (function frame(n){
+          var p = Math.min((n - t0) / dur, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          if(p < 1) requestAnimationFrame(frame);
+        })(t0);
+      }
+      var cio = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){ e.target.querySelectorAll('.count').forEach(runCounter); cio.unobserve(e.target); }
+        });
+      }, {threshold:.4});
+      document.querySelectorAll('.stat-item').forEach(function(el){ cio.observe(el); });
+
+      /* ---- 3. HOOPP Build stepper (built from the existing cards) ---- */
+      var stepCards = Array.prototype.slice.call(document.querySelectorAll('.build-step'));
+      if(stepCards.length){
+        var acts = stepCards.map(function(s){
+          return { no: s.querySelector('.step-no').textContent,
+                   t: s.querySelector('h3').textContent,
+                   d: s.querySelector('p').textContent };
+        });
+        var band = document.querySelector('.build-steps');
+        var stepper = document.createElement('div');
+        stepper.className = 'build-stepper';
+        stepper.innerHTML = '<div class="stepper-nav"></div>' +
+          '<div class="stepper-track"><i></i></div>' +
+          '<div class="stepper-panel"></div>';
+        band.replaceWith(stepper);
+        var nav = stepper.querySelector('.stepper-nav'),
+            fill = stepper.querySelector('.stepper-track i'),
+            panel = stepper.querySelector('.stepper-panel'),
+            cur = 0, timer = null, interacted = false;
+        function show(i){
+          cur = i;
+          nav.querySelectorAll('.stepper-btn').forEach(function(b,j){ b.classList.toggle('active', j===i); });
+          fill.style.width = ((i+1) / acts.length * 100) + '%';
+          panel.classList.remove('fade'); void panel.offsetWidth;
+          panel.innerHTML = '<h3>' + acts[i].t + '</h3><p>' + acts[i].d + '</p>';
+          panel.classList.add('fade');
+        }
+        acts.forEach(function(a,i){
+          var b = document.createElement('button');
+          b.className = 'stepper-btn' + (i===0 ? ' active' : '');
+          b.innerHTML = '<span>' + a.no.replace('ACT ','') + '</span>' + a.t;
+          b.setAttribute('aria-label', 'Act ' + (i+1) + ': ' + a.t);
+          b.addEventListener('click', function(){ interacted = true; if(timer) clearInterval(timer); show(i); });
+          nav.appendChild(b);
+        });
+        show(0);
+        timer = setInterval(function(){ if(!interacted) show((cur+1) % acts.length); }, 6000);
+        /* reveal the stepper itself */
+        stepper.classList.add('reveal');
+        new IntersectionObserver(function(es, o){
+          es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); o.disconnect(); } });
+        }, {threshold:.15}).observe(stepper);
+      }
+
+      /* ---- 4. experience accordion ---- */
+      document.querySelectorAll('.timeline-card').forEach(function(card, idx){
+        var ul = card.querySelector('ul');
+        if(!ul) return;
+        var head = document.createElement('button');
+        head.className = 'tl-toggle';
+        head.setAttribute('aria-expanded', idx === 0 ? 'true' : 'false');
+        Array.prototype.slice.call(card.children).forEach(function(ch){ if(ch !== ul) head.appendChild(ch); });
+        var chev = document.createElement('span');
+        chev.className = 'tl-chev'; chev.textContent = '▾'; chev.setAttribute('aria-hidden','true');
+        head.appendChild(chev);
+        var body = document.createElement('div');
+        body.className = 'tl-body';
+        body.appendChild(ul);
+        card.appendChild(head); card.appendChild(body);
+        var item = card.closest('.timeline-item');
+        function setOpen(open){
+          item.classList.toggle('open', open);
+          head.setAttribute('aria-expanded', open);
+          body.style.maxHeight = open ? body.scrollHeight + 'px' : '0px';
+        }
+        head.addEventListener('click', function(){ setOpen(!item.classList.contains('open')); });
+        if(idx === 0){ item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+      });
+
+      /* ---- 5. scrollspy + progress + toTop ---- */
+      var spySecs = Array.prototype.slice.call(document.querySelectorAll('section[id], header[id]'));
+      var navAs = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+      var bar = document.getElementById('progressBar');
+      function onScroll(){
+        var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+        bar.style.width = (h > 0 ? (y / h * 100) : 0) + '%';
+        toTop.classList.toggle('show', y > 600);
+        var cur = null, probe = y + 140;
+        spySecs.forEach(function(s){ if(s.offsetTop <= probe) cur = s.id; });
+        navAs.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+      }
+      addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+      /* ---- 6. AI agent phase tabs (built from the existing list) ---- */
+      var ul = document.querySelector('.initiative-card ul');
+      if(ul){
+        var lis = Array.prototype.slice.call(ul.children);
+        var labels = ['🔍 01 · Sensing', '✅ 02 · Verification', '💬 03 · Incident Chat'];
+        var wrap = document.createElement('div');
+        var btns = document.createElement('div'); btns.className = 'phase-tab-btns';
+        var panels = document.createElement('div');
+        var tabTimer = null;
+        function activateTab(j){
+          btns.querySelectorAll('.phase-tab-btn').forEach(function(x){ x.classList.remove('active'); });
+          panels.querySelectorAll('.phase-panel').forEach(function(x){ x.classList.remove('active'); });
+          btns.children[j].classList.add('active'); panels.children[j].classList.add('active');
+          if(tabTimer) clearTimeout(tabTimer);
+          if(j > 0) tabTimer = setTimeout(function(){ activateTab(0); }, 12000);
+        }
+        lis.forEach(function(li, i){
+          var b = document.createElement('button');
+          b.className = 'phase-tab-btn' + (i === 0 ? ' active' : '');
+          b.textContent = labels[i] || ('Phase ' + (i+1));
+          b.addEventListener('click', function(){ activateTab(i); });
+          btns.appendChild(b);
+          var p = document.createElement('div');
+          p.className = 'phase-panel' + (i === 0 ? ' active' : '');
+          p.innerHTML = li.innerHTML;
+          panels.appendChild(p);
+        });
+        wrap.appendChild(btns); wrap.appendChild(panels);
+        ul.replaceWith(wrap);
+      }
+
+      /* ---- 8. How I Lead flip cards ---- */
+      document.querySelectorAll('.lead-flip').forEach(function(card){
+        var flipTimer = null;
+        function toggle(){
+          var willOpen = !card.classList.contains('flipped');
+          card.classList.toggle('flipped');
+          if(flipTimer) clearTimeout(flipTimer);
+          if(willOpen) flipTimer = setTimeout(function(){ card.classList.remove('flipped'); }, 12000);
+        }
+        card.addEventListener('click', toggle);
+        card.addEventListener('keydown', function(e){
+          if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+        });
+      });
+      /* peek-hint: flip the first card briefly on first view to teach the interaction */
+      var leadSec = document.getElementById('leadership');
+      if(leadSec){
+        var peeked = false;
+        new IntersectionObserver(function(es, o){
+          es.forEach(function(e){
+            if(e.isIntersecting && !peeked){
+              peeked = true; o.disconnect();
+              var first = document.querySelector('.lead-flip');
+              if(first){ setTimeout(function(){
+                first.classList.add('flipped');
+                setTimeout(function(){ first.classList.remove('flipped'); }, 1200);
+              }, 650); }
+            }
+          });
+        }, {threshold:.35}).observe(leadSec);
+      }
+
+      /* ---- 9. skill pillar emojis ---- */
+      var skillEmojis = ['🧭','📊','☁️','🌐'];
+      document.querySelectorAll('.skills-grid .skill-card').forEach(function(c, i){
+        var em = document.createElement('div');
+        em.className = 'skill-emoji';
+        em.textContent = skillEmojis[i % skillEmojis.length];
+        em.setAttribute('aria-hidden', 'true');
+        c.insertBefore(em, c.firstChild);
+      });
+
+      /* ---- 10. stagger choreography for card grids ---- */
+      document.querySelectorAll('.lead-grid, .skills-grid, .edu-grid').forEach(function(grid){
+        Array.prototype.forEach.call(grid.children, function(child, i){
+          child.style.transitionDelay = (i * 90) + 'ms';
+          var clr = new IntersectionObserver(function(es, o){
+            es.forEach(function(e){
+              if(e.isIntersecting){
+                setTimeout(function(){ child.style.transitionDelay = '0ms'; }, 900);
+                o.disconnect();
+              }
+            });
+          }, {threshold:.2});
+          clr.observe(child);
+        });
+      });
+    })();
+    </script>
+    <script>
+    /* ============ Demo A v2.1 — synced interactivity ============ */
+    (function(){
+      'use strict';
+
+      /* ---- change governance emojis ---- */
+      var govEmojis = ['📋','🎯','📊','⭐','🔄'];
+      document.querySelectorAll('.highlight-box li').forEach(function(li, i){
+        var em = document.createElement('span');
+        em.className = 'gov-emoji';
+        em.textContent = govEmojis[i % govEmojis.length];
+        em.setAttribute('aria-hidden', 'true');
+        li.insertBefore(em, li.firstChild);
+        li.classList.add('has-emoji');
+      });
+
+      /* ---- project card tilt (subtle 3D on hover, desktop only) ---- */
+      if(window.matchMedia('(hover:hover) and (prefers-reduced-motion: no-preference)').matches){
+        document.querySelectorAll('.project-card').forEach(function(card){
+          card.addEventListener('mousemove', function(e){
+            var r = card.getBoundingClientRect();
+            var x = (e.clientX - r.left) / r.width - .5;
+            var y = (e.clientY - r.top) / r.height - .5;
+            card.style.transform = 'perspective(900px) rotateY(' + (x*5).toFixed(2) + 'deg) rotateX(' + (-y*5).toFixed(2) + 'deg)';
+          });
+          card.addEventListener('mouseleave', function(){ card.style.transform = ''; });
+        });
+      }
+
+      /* ---- project design-decision toggles ---- */
+      document.querySelectorAll('.decisions-toggle').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var body = btn.nextElementSibling;
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!open));
+          body.style.maxHeight = !open ? body.scrollHeight + 'px' : '0px';
+        });
+      });
+    })();
+    </script>
+    <script>
+    /* ============ Key Achievement milestone rail ============ */
+    (function(){
+      'use strict';
+      var kaUl = document.querySelector('.highlight-box ul');
+      if(!kaUl) return;
+      var shortLabels = ['Gap','Skills','Framework','Mandate','Lifecycle'];
+      var items = Array.prototype.map.call(kaUl.children, function(li, i){
+        var strong = li.querySelector('strong');
+        var em = li.querySelector('.gov-emoji');
+        return {
+          emoji: em ? em.textContent : '•',
+          label: shortLabels[i] || ('Step ' + (i+1)),
+          title: strong ? strong.textContent.replace(/:\s*$/, '') : '',
+          body: li.innerHTML
+                  .replace(/<strong>.*?<\/strong>\s*/, '')
+                  .replace(/<span class="gov-emoji"[^>]*>.*?<\/span>\s*/, '')
+        };
+      });
+      var wrap = document.createElement('div');
+      wrap.className = 'ka-wrap';
+      var rail = document.createElement('div'); rail.className = 'ka-rail';
+      var panel = document.createElement('div'); panel.className = 'ka-panel';
+      var kaTimer = null;
+      function showKa(i){
+        rail.querySelectorAll('.ka-node').forEach(function(n, j){ n.classList.toggle('active', j === i); });
+        panel.classList.remove('fade'); void panel.offsetWidth;
+        panel.innerHTML = '<h4>' + items[i].emoji + ' ' + items[i].title + '</h4><p>' + items[i].body + '</p>';
+        panel.classList.add('fade');
+        if(kaTimer) clearTimeout(kaTimer);
+        if(i > 0) kaTimer = setTimeout(function(){ showKa(0); }, 12000);
+      }
+      items.forEach(function(it, i){
+        var b = document.createElement('button');
+        b.className = 'ka-node' + (i === 0 ? ' active' : '');
+        b.innerHTML = '<span>' + it.emoji + '</span>' + it.label;
+        b.setAttribute('aria-label', 'Milestone: ' + it.title);
+        b.addEventListener('click', function(){ showKa(i); });
+        rail.appendChild(b);
+        if(i < items.length - 1){
+          var ar = document.createElement('span');
+          ar.className = 'ka-arrow';
+          ar.setAttribute('aria-hidden', 'true');
+          ar.textContent = '\u2192';
+          rail.appendChild(ar);
+        }
+      });
+      wrap.appendChild(rail); wrap.appendChild(panel);
+      kaUl.replaceWith(wrap);
+      showKa(0);
+    })();
     </script>
 </body>
 </html>
