@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harsahir Singh - ITSM Manager & Cloud Engineer Portfolio. Bridging crisis leadership and cloud infrastructure.">
-    <title>Harsahir Singh | ITSM Manager & Cloud Engineer</title>
+    <meta name="description" content="Harsahir Singh — IT Service Management Manager, ITIL 5 Foundation certified. Full-lifecycle ITSM leadership: major incident response, change governance, and problem management.">
+    <title>Harsahir Singh | IT Service Management Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #009944;
-            --accent: #007f5f;
+            --primary: #1e3a8a;
+            --accent: #b45309;
             --dark: #1a1a1a;
             --light-bg: #f8f9fa;
             --white: #ffffff;
@@ -56,7 +56,7 @@
             color: var(--primary); 
             letter-spacing: -0.5px; 
         }
-        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
         .nav-links a { 
             font-weight: 500; 
             font-size: 0.95rem; 
@@ -179,7 +179,7 @@
             color: white;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            white-space: nowrap; /* Keep Co-op -> Manager on one line */
+            white-space: nowrap;
         }
         .stat-item p {
             color: rgba(255,255,255,0.9);
@@ -204,7 +204,7 @@
             max-width: 700px;
         }
         .highlight-box {
-            background: linear-gradient(135deg, #009944 0%, #007f5f 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #b45309 100%);
             color: white;
             padding: 3rem;
             border-radius: 16px;
@@ -304,6 +304,74 @@
             font-weight: bold;
         }
 
+        /* Change Management spotlight */
+        .initiative-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .initiative-icon {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .initiative-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+        }
+        .initiative-card p { color: #555; line-height: 1.7; }
+        .badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 0.8rem;
+        }
+        .initiative-card ul { margin: 1.2rem 0 0 1.2rem; }
+        .initiative-card ul li { margin-bottom: 1rem; color: #444; line-height: 1.7; }
+        .initiative-card ul li::marker { color: var(--primary); font-weight: bold; }
+        .initiative-note {
+            margin-top: 1.4rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary);
+            color: #555;
+            font-style: italic;
+        }
+        .diagram-img {
+            width: 100%;
+            max-width: 920px;
+            display: block;
+            margin: 2.5rem auto 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .diagram-img:hover { transform: scale(1.01); }
+
         /* Skills Grid */
         .skills-grid { 
             display: grid; 
@@ -341,6 +409,66 @@
             color: var(--accent); 
             font-size: 1.5rem;
         }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .cert-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .cert-icon {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .cert-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+        .cert-issuer {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        .cert-card .date-range { margin-bottom: 0; }
+        .cert-info { flex: 1; }
+        .cert-img {
+            width: 220px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin-left: auto;
+            align-self: center;
+        }
+        .cert-img:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
 
         /* Projects - FIXED IMAGE SHOWS FULL PIC */
         .projects-grid { 
@@ -453,7 +581,7 @@
         }
         .cta h2 { color: white; margin-bottom: 1rem; }
         .cta p { color: rgba(255,255,255,0.95); margin-bottom: 2rem; font-size: 1.2rem; }
-        .cta a { 
+        .cta .btn-contact { 
             display: inline-block;
             background: white;
             color: var(--primary);
@@ -464,7 +592,31 @@
             transition: all 0.3s;
             box-shadow: var(--shadow-md);
         }
-        .cta a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .cta .btn-contact:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .contact-links {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact-links a:hover {
+            transform: translateY(-2px);
+            text-decoration: underline;
+        }
+        .contact-sep {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.2rem;
+        }
 
         footer { 
             background: var(--dark); 
@@ -493,6 +645,9 @@
             .hero-text h1 { font-size: 2.2rem; }
             .hero-img { margin: 0 auto; width: 100%; max-width: 250px; }
             .stats-container { grid-template-columns: 1fr; gap: 2rem; }
+            .cert-card { flex-direction: column; }
+            .cert-img { width: 100%; max-width: 340px; margin-left: 0; }
+            .initiative-card { flex-direction: column; }
         }
     </style>
 </head>
@@ -506,8 +661,10 @@
             <div class="nav-links" id="navLinks">
                 <a href="#about" onclick="toggleMenu()">About</a>
                 <a href="#experience" onclick="toggleMenu()">Experience</a>
-                <a href="#projects" onclick="toggleMenu()">Projects</a>
+                <a href="#change" onclick="toggleMenu()">Change</a>
                 <a href="#skills" onclick="toggleMenu()">Skills</a>
+                <a href="#certifications" onclick="toggleMenu()">Certifications</a>
+                <a href="#projects" onclick="toggleMenu()">Projects</a>
                 <a href="#education" onclick="toggleMenu()">Education</a>
                 <a href="Harsahir_Singh_Resume.pdf" target="_blank" class="btn-resume">
                     <i class="fas fa-download"></i> Resume
@@ -519,9 +676,9 @@
     <header class="hero" id="about">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="subtitle">ITSM Manager & Cloud Engineer</div>
-                <h1>Bridging Crisis Leadership and Cloud Infrastructure</h1>
-                <p>My fire prevention and crisis management background translates surprisingly well to IT incident management. At HOOPP, I helped develop their major incident coordination function during my co-op, and was invited back to grow it as a permanent manager. I focus on the human side of incidents — clear communication, calm leadership, and bringing teams together when systems fail.</p>
+                <div class="subtitle">IT Service Management Manager · ITIL® 5 Foundation Certified</div>
+                <h1>Bridging Crisis Leadership, Change Governance &amp; Cloud Infrastructure</h1>
+                <p>Five years supervising fire prevention and site security taught me to command incidents long before I ever opened ServiceNow. Today, as ITSM Manager at HOOPP, I lead P1/P2 major incident response and run the weekly Change Advisory Board — bringing the same calm, structured command to enterprise IT. I focus on the human side of service management: clear communication, sharp governance, and teams that trust the process when systems fail.</p>
                 <div class="social-icons">
                     <a href="mailto:singh.harsahir@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -537,20 +694,20 @@
     <div class="stats-bar">
         <div class="stats-container">
             <div class="stat-item">
-                <h3>1,000+</h3>
-                <p>IT Users Supported</p>
-            </div>
-            <div class="stat-item">
                 <h3>P1/P2</h3>
-                <p>Critical Incidents Managed</p>
+                <p>Major Incidents Coordinated</p>
             </div>
             <div class="stat-item">
-                <h3>100%</h3>
-                <p>Incident Lifecycle Ownership</p>
+                <h3>Weekly</h3>
+                <p>Change Advisory Board (CAB)</p>
             </div>
             <div class="stat-item">
-                <h3>Co-op → Manager</h3>
-                <p>Career Progression</p>
+                <h3>30-min</h3>
+                <p>Leadership Comms Cadence</p>
+            </div>
+            <div class="stat-item">
+                <h3>5+ yrs</h3>
+                <p>Incident Command Experience</p>
             </div>
         </div>
     </div>
@@ -558,16 +715,16 @@
     <section id="experience">
         <div class="section-container">
             <h2>Professional Experience</h2>
-            <p class="section-subtitle">From building infrastructure to building incident management programs — my journey combines hands-on technical work with strategic ITSM leadership.</p>
+            <p class="section-subtitle">From commanding fireground incidents to commanding enterprise IT incidents — my journey combines five years of real-world crisis leadership with full-lifecycle ITSM ownership.</p>
             
             <div class="highlight-box">
                 <h3><i class="fas fa-trophy"></i> Key Achievement: Helped Build HOOPP's Incident Management Function</h3>
                 <ul>
                     <li><strong>Identified organizational gap:</strong> During my cloud engineering co-op, I recognized HOOPP needed more structured major incident coordination</li>
-                    <li><strong>Applied transferable skills:</strong> Drew on my fire prevention and crisis management background to help develop incident command protocols</li>
+                    <li><strong>Applied transferable skills:</strong> Drew on five years of fire prevention and site security leadership to help develop incident command protocols</li>
                     <li><strong>Collaborated on framework:</strong> Worked with teams to create runbooks and cross-functional coordination processes</li>
-                    <li><strong>Invited back as Manager:</strong> My ability to bridge technical work with crisis leadership led HOOPP to create a permanent ITSM Manager role</li>
-                    <li><strong>Own full lifecycle:</strong> Now manage all major incidents from initial response through PIR publication</li>
+                    <li><strong>Invited back as Manager:</strong> My ability to bridge technical work with crisis leadership led HOOPP to bring me back as full-time ITSM Manager</li>
+                    <li><strong>Own full lifecycle:</strong> Now manage all major incidents from initial response through PIR publication — and govern the changes that prevent the next one</li>
                 </ul>
             </div>
 
@@ -576,12 +733,13 @@
                     <div class="timeline-card">
                         <span class="role-title">Manager, IT Service Management</span>
                         <span class="company-name">Healthcare of Ontario Pension Plan (HOOPP)</span>
-                        <span class="date-range">September 2024 – Present</span>
+                        <span class="date-range">September 2025 – Present</span>
                         <ul>
-                            <li><strong>Lead major incident coordination</strong> for enterprise infrastructure supporting 1,000+ IT users</li>
-                            <li><strong>Facilitate cross-functional response:</strong> Bring together 10+ teams during P1/P2 incidents</li>
-                            <li><strong>Manage end-to-end incident lifecycle:</strong> From initial detection through resolution and PIR publication</li>
-                            <li><strong>Continuous improvement:</strong> Use ServiceNow, PagerDuty, and Azure DevOps to refine incident response</li>
+                            <li><strong>Lead P1/P2 major incident coordination</strong> — bringing together technical teams and external vendors to assess impact, troubleshoot, and validate recovery</li>
+                            <li><strong>Run incident bridges</strong> with structured leadership updates at a 30-minute cadence during major incidents</li>
+                            <li><strong>Drive post-incident reviews</strong> and retrospectives, tracking corrective actions and problem follow-ups to closure</li>
+                            <li><strong>Maintain escalation workflows,</strong> on-call rotations, communication templates, and operational runbooks</li>
+                            <li><strong>Improve service continuity</strong> across cloud infrastructure, Microsoft 365, and business applications</li>
                         </ul>
                     </div>
                 </div>
@@ -589,11 +747,35 @@
                     <div class="timeline-card">
                         <span class="role-title">Cloud Engineer / Incident Manager – Co-op</span>
                         <span class="company-name">Healthcare of Ontario Pension Plan (HOOPP)</span>
-                        <span class="date-range">May 2024 – September 2024</span>
+                        <span class="date-range">September 2024 – April 2025</span>
                         <ul>
-                            <li><strong>Developed incident coordination:</strong> Helped create documentation and response frameworks</li>
-                            <li><strong>Managed critical P1/P2 incidents</strong> using ServiceNow, AppDynamics, and Splunk</li>
-                            <li><strong>Applied crisis management skills:</strong> Drew on fire prevention background to coordinate cross-team responses</li>
+                            <li><strong>Supported P1/P2 incident bridges,</strong> technical team coordination, and stakeholder communications</li>
+                            <li><strong>Tracked incidents and changes</strong> through ServiceNow and Azure DevOps; supported CAB activities</li>
+                            <li><strong>Built ITSM metric dashboards</strong> in Power BI and contributed to post-incident follow-ups</li>
+                            <li><strong>Monitored services</strong> with AppDynamics and Splunk; gained exposure to BCM/DR processes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="role-title">Fire Prevention and Site Security Supervisor</span>
+                        <span class="company-name">Stellantis Canada</span>
+                        <span class="date-range">May 2020 – April 2025</span>
+                        <ul>
+                            <li><strong>Supervised a high-performing team</strong> and coordinated site-wide security measures</li>
+                            <li><strong>Improved safety response and reduced breaches by 35%</strong> through incident analysis</li>
+                            <li><strong>Five years of real-world incident command</strong> — the foundation of my ITSM leadership approach</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <span class="role-title">IT Assistance (Part-Time)</span>
+                        <span class="company-name">DEX Technology</span>
+                        <span class="date-range">November 2023 – November 2024</span>
+                        <ul>
+                            <li><strong>Resolved 90% of tickets on first contact</strong> across hardware and software issues</li>
+                            <li><strong>Helped implement solutions</strong> that improved infrastructure efficiency by 20%</li>
                         </ul>
                     </div>
                 </div>
@@ -601,34 +783,101 @@
         </div>
     </section>
 
-    <section id="skills" style="background: var(--light-bg);">
+    <section id="change" style="background: var(--light-bg);">
         <div class="section-container">
-            <h2>Technical Skills & Tools</h2>
+            <h2>Change Management Leadership</h2>
+            <p class="section-subtitle">Incidents get the adrenaline, but disciplined change governance is what keeps the lights on. I own the change process end to end.</p>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-clipboard-check"></i> Change Governance at HOOPP</h3>
+                <ul>
+                    <li><strong>Facilitate the weekly Change Advisory Board</strong> — reviewing change risk, scheduling, stakeholder readiness, and governance requirements</li>
+                    <li><strong>Single point of contact</strong> for change management across IT, ensuring every change is properly assessed and authorized</li>
+                    <li><strong>Own change KPIs and KRIs,</strong> tracked in Power BI dashboards for continuous improvement</li>
+                    <li><strong>Govern emergency and expedited changes,</strong> required approvals, and change freeze controls</li>
+                    <li><strong>Maintain accurate change records</strong> in ServiceNow with full audit traceability</li>
+                </ul>
+            </div>
+
+            <div class="initiative-card">
+                <div class="initiative-icon"><i class="fas fa-robot"></i></div>
+                <div>
+                    <span class="badge">In Progress</span>
+                    <h3>AI Change-Recognition Agent</h3>
+                    <p>I'm building an AI agent that gives change management something it's never had: full visibility into AI-related work. Hosted on Microsoft's Azure AI Foundry so it scales across the entire organization, the agent watches our ServiceNow and Azure DevOps environments and automatically identifies which changes involve AI — the fastest-growing blind spot in most change processes.</p>
+                    <ul>
+                        <li><strong>Daily change sensing</strong> — every 24 hours, the agent scans all new change tickets in ServiceNow and every work item moved to In Progress in Azure DevOps, then classifies each one twice: first, whether it's AI-related — either a change <em>to</em> an AI system or a change <em>built with</em> AI assistance — and second, what type of AI change it is (business-case, portfolio, portal, and others). AI-related changes carry different risk profiles; this makes them visible before they ever reach the CAB.</li>
+                        <li><strong>On-close verification</strong> — when a change or work item closes, the agent runs again — this time reading the complete record: discussion comments, pull requests, and the actual code changes — and locks in a final classification. The first pass catches it early; the second pass gets it right.</li>
+                        <li><strong>Incident assistant (chat)</strong> — the second phase adds a chat interface for incident response: describe the symptoms and which teams might be responsible, and the agent searches everything those teams closed in the last 24 hours to surface the change most likely behind the incident — cutting the "what changed?" investigation from hours to minutes.</li>
+                    </ul>
+                    <p class="initiative-note">Built from real CAB experience — the question every change manager asks during a major incident is "what changed?" This agent is designed to answer it before it's asked.</p>
+                </div>
+            </div>
+            <!-- Upload the AI agent architecture diagram to the repo as ai_change_recognition_architecture.png (exact filename — GitHub Pages URLs are case-sensitive) -->
+            <img src="ai_change_recognition_architecture.png" alt="AI Change-Recognition Agent architecture" class="diagram-img" onclick="openLightbox(this.src)">
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-container">
+            <h2>Technical Skills &amp; Tools</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3><i class="fas fa-tasks"></i> ITSM & Governance</h3>
+                    <h3><i class="fas fa-tasks"></i> ITSM &amp; Governance</h3>
                     <ul>
+                        <li>ITIL 5 Foundation Certified</li>
                         <li>Major Incident Management</li>
-                        <li>Post-Incident Reviews (PIR)</li>
-                        <li>ServiceNow Platform</li>
-                        <li>PagerDuty</li>
+                        <li>Change Management &amp; CAB Governance</li>
+                        <li>Problem Management &amp; PIRs</li>
+                        <li>ServiceNow (Incident, Change, Problem)</li>
+                        <li>PagerDuty · Azure DevOps</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
-                    <ul>
-                        <li>AWS (EC2, VPC, IAM, S3, SSM)</li>
-                        <li>Microsoft Azure (VNet, Bastion, AD)</li>
-                        <li>Windows & Linux Administration</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-chart-line"></i> Observability</h3>
+                    <h3><i class="fas fa-chart-line"></i> Observability &amp; Reporting</h3>
                     <ul>
                         <li>Splunk Log Analysis</li>
                         <li>AppDynamics APM</li>
                         <li>Power BI Dashboards</li>
+                        <li>Azure Monitor &amp; Log Analytics</li>
                     </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud &amp; Infrastructure</h3>
+                    <ul>
+                        <li>AWS (EC2, VPC, S3, IAM, RDS, Route 53)</li>
+                        <li>Azure (VMs, VNets, AVD, Entra ID)</li>
+                        <li>Windows Server &amp; Linux Administration</li>
+                        <li>VMware / VirtualBox</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-network-wired"></i> Enterprise &amp; Networking</h3>
+                    <ul>
+                        <li>Microsoft 365 · Intune</li>
+                        <li>Active Directory</li>
+                        <li>TCP/IP, VLANs, Routing &amp; Switching</li>
+                        <li>Git &amp; CI/CD Fundamentals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" style="background: var(--light-bg);">
+        <div class="section-container">
+            <h2>Certifications</h2>
+            <p class="section-subtitle">Industry credentials backing my ITSM and cloud practice.</p>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-info">
+                        <h3>ITIL 5 Foundation</h3>
+                        <span class="cert-issuer">PeopleCert</span>
+                        <span class="date-range">Issued June 2026 · Certificate No: GR428010765HS</span>
+                    </div>
+                    <!-- Upload your certificate screenshot to the repo as CERT.PNG (exact filename — GitHub Pages URLs are case-sensitive) -->
+                    <img src="CERT.png" alt="ITIL 5 Foundation certificate — Harsahir Singh" class="cert-img" onclick="openLightbox(this.src)">
                 </div>
             </div>
         </div>
@@ -644,19 +893,23 @@
                     <div class="project-body">
                         <h3 class="project-title">AWS Secure Cloud Deployment</h3>
                         <ul>
-                            <li><strong>High Availability:</strong> Multi-tier VPC architecture across multiple AZs</li>
-                            <li><strong>Zero-Trust Security:</strong> Eliminated public SSH exposure using AWS Systems Manager (SSM)</li>
+                            <li><strong>Secure Architecture:</strong> Designed VPC-based infrastructure with EC2, S3, IAM, RDS, and Route 53</li>
+                            <li><strong>Private Access:</strong> Systems Manager–based access, internal load balancing, and VPC peering</li>
+                            <li><strong>Email Workload:</strong> Deployed a Roundcube email server on Amazon RDS with IAM role-based access</li>
                         </ul>
+                        <!-- TODO: Add the project date here, e.g. <span class="date-range">2025</span> -->
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="ms-project.PNG" alt="Azure Infrastructure" class="project-img" onclick="openLightbox(this.src)">
+                    <img src="ms-project.png" alt="Azure Virtual Desktop" class="project-img" onclick="openLightbox(this.src)">
                     <div class="project-body">
-                        <h3 class="project-title">Azure Infrastructure Optimization</h3>
+                        <h3 class="project-title">Azure Virtual Desktop (AVD) Deployment</h3>
                         <ul>
-                            <li><strong>Network Architecture:</strong> Designed Hub-and-Spoke topology with VNet Peering</li>
-                            <li><strong>Secure Connectivity:</strong> Integrated Azure Bastion for browser-based access</li>
+                            <li><strong>Host Pools:</strong> Deployed Entra-joined session hosts, application groups, and workspaces</li>
+                            <li><strong>Operations:</strong> Configured host scaling settings, RBAC, and agent updates</li>
+                            <li><strong>Monitoring:</strong> Enabled diagnostics with Azure Monitor and Log Analytics</li>
                         </ul>
+                        <!-- TODO: Add the project date here, e.g. <span class="date-range">2025</span> -->
                     </div>
                 </div>
             </div>
@@ -670,6 +923,7 @@
                 <h3>Seneca Polytechnic — Computer Systems Technology (Advanced Diploma)</h3>
                 <span class="date-range">May 2023 – Present</span>
                 <ul>
+                    <li>President's Honour List</li>
                     <li>Specialization: Cloud Infrastructure Associate</li>
                     <li>Built virtual data centers using VMware ESXi for resource scaling</li>
                 </ul>
@@ -685,7 +939,14 @@
             <div class="cta">
                 <h2>Let's Connect</h2>
                 <p>I'm open to collaborating, networking, or discussing ITSM and Cloud initiatives.</p>
-                <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
+                <a href="mailto:singh.harsahir@gmail.com" class="btn-contact"><i class="fas fa-envelope"></i> Contact Me</a>
+                <div class="contact-links">
+                    <a href="mailto:singh.harsahir@gmail.com" aria-label="Email Harsahir Singh"><i class="fas fa-envelope"></i> singh.harsahir@gmail.com</a>
+                    <span class="contact-sep" aria-hidden="true">·</span>
+                    <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank" aria-label="Harsahir Singh on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <span class="contact-sep" aria-hidden="true">·</span>
+                    <a href="https://github.com/HarsahirSingh" target="_blank" aria-label="Harsahir Singh on GitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
             </div>
         </div>
     </section>
